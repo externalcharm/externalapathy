@@ -28,7 +28,7 @@ elif direct == 13:
     if command == 0:
         print("Юг")
     elif command == 1:
-        print("Восток")
+        print("Восток"
     elif command == -1:
         print("Запад")
 
