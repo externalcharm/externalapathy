@@ -11,5 +11,5 @@ def function(summa, summa1):
 
 
 for summa1 in range(days):
-    summa += 3
+    summa +=
 print("Прибыль: ", summa + sale)
