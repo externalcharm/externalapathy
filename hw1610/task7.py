@@ -3,7 +3,6 @@ vowles = ['a', 'e', 'u', 'y', 'i', 'o']
 
 
 def translate(word):
-    global lindex
     first = word[0]
     if first in vowles:
         word = word.lower()
