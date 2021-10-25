@@ -7,4 +7,4 @@ usernum = int(input("Введите число из трех цифр из сп�
 if usernum in ThreeDigNumbers:
     print(ThreeDigNumbers.index(usernum))
 else:
-     print("That is not in the list")
+    print("That is not in the list")
