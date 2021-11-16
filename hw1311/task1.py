@@ -31,7 +31,6 @@ class Monsters:
 
 class Hero:
     def __init__(self, health):
-
         self.health = health
 
     def __str__(self):
