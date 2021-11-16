@@ -38,7 +38,7 @@ class Hero:
         return "Здоровье героя:" + str(self.health)
 
 
-# здоровье героя
+# переменная с здоровьем героя
 hero = Hero(25)
 # двери
 door = {}
