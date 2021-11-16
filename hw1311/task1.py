@@ -50,7 +50,7 @@ for i in range(10):
 # проверка хп героя
     if hero.health > 1:
         print(hero)
-        print(Artefacts(), Monsters())
+        print("За дверью был", Artefacts(), "и", Monsters())
         continue
     elif hero.health < 0:
         print(hero, '\n' "Ваш герой был убит, вы проиграли")
