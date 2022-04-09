@@ -12,7 +12,7 @@ class FSMDate(StatesGroup):
     time = State()
 
 async def date(message: types.Message):
-    await FSMDate.first()
+    await FSMDate.time.set()
     await message.answer("Напишите дату..")
 
 async def send_date(message: types.Message, state: FSMContext):
