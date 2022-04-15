@@ -25,9 +25,9 @@ def select(abbreviated):
         select_query = '''SELECT utter FROM calendar WHERE abbreviated = ?'''
 
         cursor.execute(select_query, (abbreviated,))
-        records = cursor.fetchall()
+        records = cursor.fetchone()
         cursor.close()
-        return records
+        return records[0]
     except sqlite3.Error as error:
         return error
     finally:

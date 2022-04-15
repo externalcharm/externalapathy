@@ -8,7 +8,7 @@ async def datenow(message: types.Message):
     date = datetime.datetime.now()
     date = date.strftime("%a.%B %Y %H:%M:%S")
     answer = db.select(date[0:3])
-    await message.answer(f"{answer} "[3:][:-5] + f" {date[4:]}")
+    await message.answer(f"{answer}" + f" {date[4:]}")
 
 class FSMDate(StatesGroup):
     time = State()
@@ -20,10 +20,9 @@ async def date(message: types.Message):
 async def send_date(message: types.Message, state: FSMContext):
     async with state.proxy() as parsed_message:
         parsed_message = message.text.split()
-        date = datetime.datetime(int(parsed_message[2]), int(parsed_message[1]), int(parsed_message[0]))
-        string = date.strftime("%a.%B %Y")
-        answer = db.select(string[0:3])
-        await message.answer(f"{answer} "[3:][:-5] + f" {string[4:]}")
+        date = datetime.datetime(int(parsed_message[2]), int(parsed_message[1]), int(parsed_message[0])).strftime("%a.%B %Y")
+        answer = db.select(date[0:3])
+        await message.answer(f"{answer}" + f" {date[4:]}")
     await state.finish()
 
 def register_handlers(dp: Dispatcher):
