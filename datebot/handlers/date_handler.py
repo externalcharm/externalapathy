@@ -6,7 +6,9 @@ import datetime
 
 async def datenow(message: types.Message):
     date = datetime.datetime.now()
-    await message.answer(date.ctime())
+    date = date.strftime("%a.%B %Y %H:%M:%S")
+    answer = db.select(date[0:3])
+    await message.answer(f"{answer} "[3:][:-5] + f" {date[4:]}")
 
 class FSMDate(StatesGroup):
     time = State()
