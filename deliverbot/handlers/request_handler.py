@@ -23,8 +23,6 @@ async def products(message: types.Message, state: FSMContext):
     parsed_message = message.text.split(' ')
     async with state.proxy() as data:
             data['product']  = db.select_product(parsed_message[0], parsed_message[1])
-    await FSMDeliver.next()
-    await message.answer("Проверьте правильность введенных данных")
     await message.answer(data, reply_markup=kb_main)
     await state.finish()
 
