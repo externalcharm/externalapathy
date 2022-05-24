@@ -5,7 +5,7 @@ button_menu = KeyboardButton('menu')
 button_cancel = KeyboardButton('cancel')
 button_location = KeyboardButton('send_location', request_location=True)
 button_review = KeyboardButton('отзывы')
-button_feedback = KeyboardButton('оставить отзывы')
+button_feedback = KeyboardButton('оставить отзыв')
 
 kb_main = ReplyKeyboardMarkup(resize_keyboard=True)
 kb_main.add(button_request).add(button_menu).add(button_review).add(button_feedback)
