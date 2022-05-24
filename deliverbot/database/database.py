@@ -67,3 +67,21 @@ def select_reviews():
     finally:
         if sqlite_connection:
             sqlite_connection.close()
+
+def insert_review(author, review):
+    try:
+        sqlite_connection = sqlite3.connect("menu.db")
+        cursor = sqlite_connection.cursor()
+
+        insert_query = '''INSERT INTO reviews (author_review, review)
+                          VALUES (?, ?)'''
+
+        cursor.execute(insert_query, (author, review))
+        records = cursor.fetchall()
+        cursor.close()
+        return records
+    except sqlite3.Error as error:
+        return error
+    finally:
+        if sqlite_connection:
+            sqlite_connection.close()

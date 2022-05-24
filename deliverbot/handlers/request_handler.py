@@ -1,6 +1,7 @@
 from aiogram import Dispatcher, types
 from aiogram.dispatcher import FSMContext
 from aiogram.dispatcher.filters.state import State, StatesGroup
+from aiogram.dispatcher.filters import Text
 from database import database as db
 from keyboard import kb_main, kb_location
 
@@ -34,7 +35,7 @@ async def cancel(message: types.Message, state: FSMContext):
     await message.reply("Действие отменено.", reply_markup=kb_main)
 
 def register_handlers(dp: Dispatcher):
-    dp.register_message_handler(get_adress, commands=['make_request'])
-    dp.register_message_handler(cancel, commands=['cancel'] , state='*')
+    dp.register_message_handler(get_adress, Text(equals='make_request', ignore_case=False))
+    dp.register_message_handler(cancel, Text(equals='cancel', ignore_case=False), state='*')
     dp.register_message_handler(save_adress, state=FSMDeliver.adress)
     dp.register_message_handler(products, state=FSMDeliver.product)
