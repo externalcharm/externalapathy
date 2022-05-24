@@ -68,7 +68,7 @@ def select_reviews():
         if sqlite_connection:
             sqlite_connection.close()
 
-def insert_review(author, review):
+def insert_feedback(author, review):
     try:
         sqlite_connection = sqlite3.connect("menu.db")
         cursor = sqlite_connection.cursor()
