@@ -8,7 +8,7 @@ button_review = KeyboardButton('отзывы')
 button_feedback = KeyboardButton('оставить отзывы')
 
 kb_main = ReplyKeyboardMarkup(resize_keyboard=True)
-kb_main.add(button_request).add(button_menu).add(button_review).add
+kb_main.add(button_request).add(button_menu).add(button_review).add(button_feedback)
 
 kb_location = ReplyKeyboardMarkup(resize_keyboard=True)
 kb_location.add(button_cancel).add(button_location)
