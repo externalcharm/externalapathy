@@ -77,9 +77,8 @@ def insert_feedback(author, review):
                           VALUES (?, ?)'''
 
         cursor.execute(insert_query, (author, review))
-        records = cursor.fetchall()
+        sqlite_connection.commit()
         cursor.close()
-        return records
     except sqlite3.Error as error:
         return error
     finally:
