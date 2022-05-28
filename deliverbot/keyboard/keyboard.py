@@ -5,10 +5,10 @@ button_menu = KeyboardButton('menu')
 button_cancel = KeyboardButton('cancel')
 button_location = KeyboardButton('send_location', request_location=True)
 button_feedbacks = KeyboardButton('feedbacks')
-button_give_feedback = KeyboardButton('give_feedback')
+button_give_feedbacks = KeyboardButton('give_feedback')
 
 kb_main = ReplyKeyboardMarkup(resize_keyboard=True)
-kb_main.add(button_request).add(button_menu).add(button_feedbacks).add(button_give_feedback)
+kb_main.add(button_request).add(button_menu).add(button_feedbacks).add(button_give_feedbacks)
 
 kb_location = ReplyKeyboardMarkup(resize_keyboard=True)
 kb_location.add(button_cancel).add(button_location)
